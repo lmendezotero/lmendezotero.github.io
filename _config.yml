@@ -1,0 +1,19 @@
+title: "Lorena Méndez Otero"
+logo: "/assets/images/fondo.jpg"
+description: "Una descripción breve sobre ti."
+url: "https://lmendezotero.github.io"
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+paginate: 5
+paginate_path: /page:num/
+
+# Sidebar
+sidebar:
+  nav: "main"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
