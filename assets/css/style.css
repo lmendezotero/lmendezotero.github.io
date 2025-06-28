@@ -46,7 +46,7 @@ a:hover {
 }
 
 .header-image img {
-  width: 70%;      /* ajusta este valor para probar anchos, por ejemplo 70%, 80%, 90%, 100% */
+  width: 90%;      /* ajusta este valor para probar anchos, por ejemplo 70%, 80%, 90%, 100% */
   max-width: 600px; /* limita el ancho máximo si quieres */
   height: 100%;    /* que ocupe toda la altura del header */
   object-fit: cover;
