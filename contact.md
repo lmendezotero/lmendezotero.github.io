@@ -9,6 +9,7 @@ permalink: /contact/
 ¿Tienes alguna idea, proyecto o colaboración en la que pueda ayudarte?  
 Siempre estoy encantada y abierta a colaborar, aprender cosas nuevas o ayudarte en lo que pueda.
 
+
 ## 📇 Mis datos de contacto
 
 - 📧 **Email:** [lmendezotero59@gmail.com](mailto:lmendezotero59@gmail@gmail.com)
@@ -19,6 +20,7 @@ Siempre estoy encantada y abierta a colaborar, aprender cosas nuevas o ayudarte 
 ## 📍 Ubicación
 
 Actualmente trabajando en remoto desde * Pontevedra *.  
+
 
 
 🙏🏻 Muchas gracias por visitar mi blog. Si algo te gustó, ¡no dudes en escribirme!
