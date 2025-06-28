@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Trabajo"
-permalink: /work/
+title: "Carrera Profesional"
+permalink: /professional_career/
 ---
 
 Aquí puedes describir tu educación o formación...
