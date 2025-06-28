@@ -11,3 +11,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Espacio entre los elementos del panel de opciones (sidebar derecha) */
+.sidebar-right li {
+  margin-bottom: 12px;
+}
