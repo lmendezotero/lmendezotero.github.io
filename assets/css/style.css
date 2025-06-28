@@ -85,9 +85,16 @@ a:hover {
   margin-bottom: 12px;
 }
 
-.credit-note {
-  margin-top: 40px;
+.site-footer {
+  text-align: center;
   font-size: 0.9em;
-  color: #888;
-  line-height: 1.4;
+  color: #1D5F5B;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+
+.site-footer .highlight {
+  color: #239A94;
+  font-weight: bold;
 }
