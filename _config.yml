@@ -1,12 +1,8 @@
-title: "Tu Nombre"
-logo: "/assets/images/tu-foto.jpg"
+title: "Lorena Méndez Otero"
+logo: "/assets/images/fondo.jpg"
 description: "Una descripción breve sobre ti."
-url: "https://tu_usuario.github.io"
+url: "https://lmendezotero.github.io"
 baseurl: ""
-remote_theme: "mmistakes/minimal-mistakes"
-
-plugins:
-  - jekyll-remote-theme
 
 markdown: kramdown
 highlighter: rouge
@@ -17,4 +13,8 @@ paginate_path: /page:num/
 # Sidebar
 sidebar:
   nav: "main"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
 
