@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Education"
+title: "Educación"
 permalink: /education/
 ---
 
