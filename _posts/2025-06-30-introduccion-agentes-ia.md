@@ -1,7 +1,7 @@
 ---
 title: "Introducción a los agentes de IA"
 date: 2025-06-30
-categories: [IA]
+categories: [Blog]
 layout: default
 permalink: /2025-06-30-introduccion-agentes-ia/
 ---
