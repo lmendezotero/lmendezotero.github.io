@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Bienvenido a mi blog 33"
+paginate: 5
+---
+
+<h2>Últimas entradas</h2>
+
+<ul>
+  {% for post in paginator.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.date | date: "%d-%m-%Y" }}</small>
+  </li>
+  {% endfor %}
+</ul>
+
+<nav>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">← Anterior</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Siguiente →</a>
+  {% endif %}
+</nav>
