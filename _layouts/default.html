@@ -17,28 +17,31 @@
     </div>
   </header>
 
-  <div class="layout-wrapper">
+  <!-- Nuevo contenedor para centrar el contenido -->
+  <div class="container">
+    <div class="layout-wrapper">
 
-    <!-- Contenido principal -->
-    <main class="main-content">
-      <h2>Entradas</h2>
-      <ul>
-        {% for post in site.posts %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </main>
+      <!-- Contenido principal -->
+      <main class="main-content">
+        <h2>Entradas</h2>
+        <ul>
+          {% for post in site.posts %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </main>
 
-    <!-- Sidebar derecho -->
-    <aside class="sidebar-right">
-      <h2>Otras opciones</h2>
-      <ul>
-        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-      </ul>
-    </aside>
+      <!-- Sidebar derecho -->
+      <aside class="sidebar-right">
+        <h2>Otras opciones</h2>
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+        </ul>
+      </aside>
 
+    </div>
   </div>
 
 </body>
