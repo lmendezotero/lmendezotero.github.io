@@ -19,7 +19,7 @@ Siempre estoy encantada y abierta a colaborar, aprender cosas nuevas o ayudarte 
 
 ## 📍 Ubicación
 
-Actualmente trabajando en remoto desde * Pontevedra *.  
+Actualmente trabajando en remoto desde **Pontevedra, Galicia**.  
 
 
 
