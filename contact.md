@@ -10,7 +10,7 @@ permalink: /contact/
 Siempre estoy encantada y abierta a colaborar, aprender cosas nuevas o ayudarte en lo que pueda.
 
 
-## 📇 Mis datos de contacto
+## 🏢 Mis datos de contacto
 
 - 📧 **Email:** [lmendezotero59@gmail.com](mailto:lmendezotero59@gmail@gmail.com)
 - 💼 **LinkedIn:** [linkedin.com/in/lorenamendezotero](https://www.linkedin.com/in/lorenamendezotero)
