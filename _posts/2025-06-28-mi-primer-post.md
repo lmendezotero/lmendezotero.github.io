@@ -1,5 +1,5 @@
 ---
-title: "Mi primer post"
+title: "¿Por qué creo un blog?"
 date: 2025-06-28
 categories: [Blog]
 layout: default
