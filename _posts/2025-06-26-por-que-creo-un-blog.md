@@ -1,5 +1,6 @@
 ---
 title: "¿Por qué creo un blog?"
+subtitle: "Mi motivación para empezar"
 date: 2025-06-26
 categories: [Inquietudes]
 layout: default
