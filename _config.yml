@@ -11,8 +11,8 @@ paginate: 5
 paginate_path: /page:num/
 
 # Sidebar
-#sidebar:
-#  nav: "main"
+sidebar:
+  nav: "main"
 
 plugins:
   - jekyll-paginate
