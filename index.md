@@ -1,7 +1,7 @@
 ---
 layout: home
-title: "Bienvenida"
-permalink: /
+author_profile: true
 ---
 
 ¡Bienvenida a mi blog personal!
+
