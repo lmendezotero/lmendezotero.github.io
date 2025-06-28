@@ -8,12 +8,28 @@ h1, h2, h3, h4, h5, h6 {
   color: #239A94;
 }
 
+/* Enlaces generales */
+/* 
 a {
   text-decoration: none;
   color: #007acc;
 }
 
 a:hover {
+  text-decoration: underline;
+}
+*/
+
+/* Enlaces en posts y sidebar con colores personalizados */
+.main-content a,
+.sidebar-right a {
+  color: #1D5F5B;
+  text-decoration: none;
+}
+
+.main-content a:hover,
+.sidebar-right a:hover {
+  color: #239A94;
   text-decoration: underline;
 }
 
