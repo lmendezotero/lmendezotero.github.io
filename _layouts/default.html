@@ -18,21 +18,13 @@
     </div>
   </header>
 
-  <!-- Nuevo contenedor para centrar el contenido -->
   <div class="container">
     <div class="layout-wrapper">
 
-      <!-- Contenido principal -->
       <main class="main-content">
-        <h2>Entradas</h2>
-        <ul>
-          {% for post in site.posts %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
+        {{ content }}
       </main>
 
-      <!-- Sidebar derecho -->
       <aside class="sidebar-right">
         <h2>Otras opciones</h2>
         <ul>
@@ -47,4 +39,3 @@
 
 </body>
 </html>
-
