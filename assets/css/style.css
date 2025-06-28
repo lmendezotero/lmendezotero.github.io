@@ -36,47 +36,40 @@ a:hover {
 .site-header {
   position: relative;
   width: 100%;
-  height: 180px;  /* puedes ajustar la altura también */
+  height: 220px; /* Puedes ajustar la altura */
   overflow: hidden;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: center; /* centra horizontalmente el contenido */
-  align-items: center;     /* centra verticalmente */
-  background-color: #000;  /* opcional, para ver el área del header */
 }
 
-.header-image img {
-  width: 70%;      /* ajusta este valor para probar anchos, por ejemplo 70%, 80%, 90%, 100% */
-  max-width: 600px; /* limita el ancho máximo si quieres */
-  height: 100%;    /* que ocupe toda la altura del header */
+.header-background img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
 .header-text {
   position: absolute;
-  top: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  transform: translate(-50%, -50%);
   color: #ffffff;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-  max-width: 90%;
-  pointer-events: none; /* para que no interfiera con la imagen */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
 .header-text h1 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2em;
   color: #ffffff;
 }
 
 .header-text p {
   margin: 8px 0 0;
-  font-size: 1em;
+  font-size: 1.2em;
   color: #ffffff;
-
+}
 
 /* NUEVO: contenedor centrado */
 .container {
