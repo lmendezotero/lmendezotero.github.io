@@ -1,6 +1,7 @@
 ---
-layout: default
-title: Sobre mí
+layout: single
+title: "About me"
+permalink: /about/
 ---
 
 # Sobre mí
