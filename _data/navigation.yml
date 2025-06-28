@@ -1,7 +1,7 @@
 main:
-  - title: "About me"
+  - title: "Sobre mí"
     url: /about/
-  - title: "Contact"
+  - title: "Contacto"
     url: /contact/
-  - title: "Education"
+  - title: "Educación"
     url: /education/
