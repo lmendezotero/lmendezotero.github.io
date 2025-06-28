@@ -10,10 +10,6 @@ highlighter: rouge
 paginate: 5
 paginate_path: /page:num/
 
-# Sidebar
-sidebar:
-  nav: "main"
-
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
