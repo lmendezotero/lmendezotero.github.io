@@ -1,5 +1,6 @@
 ---
 title: "Introducción a los agentes de IA"
+subtitle: "¿Qué son los agentes de IA y por qué están ganando tanta popularidad?"
 date: 2025-06-28
 categories: [Tecnología, IA]
 layout: default
