@@ -1,7 +1,7 @@
 ---
 title: "¿Por qué creo un blog?"
 date: 2025-06-26
-categories: [No Tecnico]
+categories: [Inquietudes]
 layout: default
 permalink: /2025-06-26-por-que-creo-un-blog/
 ---
