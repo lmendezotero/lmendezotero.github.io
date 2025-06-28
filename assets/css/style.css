@@ -35,9 +35,18 @@ a:hover {
   font-size: 1.1em;
 }
 
+/* NUEVO: contenedor centrado */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ajuste interno */
 .layout-wrapper {
   display: flex;
-  padding: 20px;
+  gap: 40px;
+  padding: 40px 0;
 }
 
 .main-content {
