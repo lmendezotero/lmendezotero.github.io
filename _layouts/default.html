@@ -7,71 +7,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
+
   <style>
-    /* Aseguramos que header-text esté encima */
-    .header-text {
+    .site-header {
       position: relative;
-      z-index: 10;
-      color: white; /* Para que se vea bien sobre la imagen */
+      color: white;
       text-align: center;
-      padding: 1em;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('{{ site.logo | relative_url }}');
     }
 
-    /* Estilo del menú dentro del header */
-    .header-text .menu-bajo-cabecera ul {
+    .header-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-text h1 {
+      margin: 0.2em 0 0;
+      font-size: 2.5em;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-text p {
+      margin: 0.2em 0 1em;
+      font-size: 1.2em;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-bajo-cabecera {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 1em;
+    }
+
+    .menu-bajo-cabecera ul {
       list-style: none;
       padding: 0;
-      margin: 0 0 1em 0;
+      margin: 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 1em;
     }
 
-    .header-text .menu-bajo-cabecera ul li a {
+    .menu-bajo-cabecera ul li a {
       text-decoration: none;
       color: white;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 0.5em 1em;
       border-radius: 20px;
       font-weight: 600;
       transition: background-color 0.3s;
     }
 
-    .header-text .menu-bajo-cabecera ul li a:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    /* Asegúrate que la imagen ocupe todo el header y que header tenga posición relativa */
-    .site-header {
-      position: relative;
-    }
-
-    .header-background img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .menu-bajo-cabecera ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.7);
     }
   </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="header-background">
-      <img src="{{ site.logo | relative_url }}" alt="Foto de cabecera">
+    <!-- Menú y cabecera superpuestos -->
+    <div class="menu-bajo-cabecera">
+      <ul>
+        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+      </ul>
     </div>
 
     <div class="header-text">
-      <!-- Menú dentro del header-text para superponerse -->
-      <div class="menu-bajo-cabecera">
-        <ul>
-          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-        </ul>
-      </div>
-
       <h1>{{ site.title }}</h1>
       <p>{{ site.description }}</p>
     </div>
