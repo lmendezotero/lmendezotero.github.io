@@ -7,142 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-    }
-
-    .site-header {
-      position: relative;
-      background-image: url('{{ site.logo | relative_url }}');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 2em 1em 1em;
-      color: white;
-      text-align: center;
-    }
-
-    .header-text h1 {
-      margin: 0.2em 0;
-      font-size: 2.5em;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    }
-
-    .header-text p {
-      margin: 0.2em 0 0;
-      font-size: 1.2em;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar {
-      margin-top: 1em;
-      text-align: center;
-      position: relative;
-    }
-
-    /* Menú normal en desktop */
-    .navbar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 0.7em;
-      flex-wrap: wrap;
-    }
-
-    .navbar ul li a {
-      text-decoration: none;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      white-space: nowrap;
-    }
-
-    .navbar ul li a:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 2em;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: white;
-      position: absolute;
-      left: 1em;
-      top: 0.3em;
-      z-index: 1100;
-    }
-
-    @media screen and (max-width: 768px) {
-      .navbar ul {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 3.5em 1.5em 1em 1.5em; /* espacio arriba para hamburguesa */
-        margin: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh; /* ocupa toda la pantalla */
-        overflow-y: auto;
-        z-index: 1000;
-      }
-
-      .navbar ul.show {
-        display: flex;
-      }
-
-      .navbar ul li {
-        margin: 0.8em 0;
-        width: 100%;
-      }
-
-      .navbar ul li a {
-        display: block;
-        width: 100%;
-        padding-left: 0.5em;
-        font-size: 1.2em;
-      }
-
-      .hamburger {
-        display: inline-block;
-      }
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5em;
-    }
-
-    .site-footer {
-      text-align: center;
-      margin-top: 3em;
-      padding: 2em 1em;
-      background-color: #f4f4f4;
-      font-size: 0.9em;
-    }
-
-    .highlight {
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
 
@@ -152,12 +16,9 @@
       <p>{{ site.description }}</p>
     </div>
 
-    <nav class="navbar" role="navigation" aria-label="Menú principal">
-      <button class="hamburger" aria-label="Mostrar menú" aria-expanded="false" aria-controls="menu-principal"
-        onclick="toggleMenu(this)">
-        &#9776;
-      </button>
-      <ul id="menu-principal">
+    <nav class="navbar">
+      <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
+      <ul>
         <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
         <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
         <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
@@ -184,15 +45,6 @@
       Hospedado en <strong class="highlight">GitHub Pages</strong>.
     </p>
   </footer>
-
-  <script>
-    function toggleMenu(button) {
-      const menu = document.getElementById('menu-principal');
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', !expanded);
-      menu.classList.toggle('show');
-    }
-  </script>
 
 </body>
 </html>
