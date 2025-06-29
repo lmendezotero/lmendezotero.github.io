@@ -14,32 +14,4 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
 
 
-<!-- Botón de reacciones (LikeBtn) -->
-<div style="margin-top: 3em; margin-bottom: 2em;">
-  <p style="font-weight: normal; font-size: 1rem; margin-bottom: 1.2em; color: #1D5F5B;">
-    ¿Te ha gustado la publicación? ¡Déjame un like para saberlo! Si tienes cuenta de GitHub, no dudes en compartir tu opinión con un comentario. ¡Muchas gracias!
-  </p>
-  <span class="likebtn-wrapper"
-        data-identifier="{{ page.slug | default: page.url }}"
-        data-theme="pill"
-        data-lang="es"
-        data-white_label="true"></span>
-</div>
 
-<script src="//w.likebtn.com/js/w/widget.js" async></script>
-
-<!-- Blqoue de Comentarios (Giscus) -->
-<div id="giscus_thread" style="margin-top: 2em;"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="lmendezotero/lmendezotero.github.io"
-        data-repo-id="REPO_ID"
-        data-category="Comentarios"
-        data-category-id="CATEGORIA_ID"
-        data-mapping="pathname"
-        data-reactions-enabled="0"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        crossorigin="anonymous"
-        async>
-</script>
