@@ -21,7 +21,7 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="preferred_color_scheme"
+        data-theme="light"
         data-lang="es"
         data-loading="lazy"
         crossorigin="anonymous"
