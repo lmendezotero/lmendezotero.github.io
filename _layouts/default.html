@@ -9,9 +9,14 @@
   {% seo %}
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
     }
 
     .site-header {
@@ -23,50 +28,6 @@
       padding: 2em 1em 1em;
       color: white;
       text-align: center;
-    }
-
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .menu-bajo-cabecera {
-      z-index: 2;
-      margin-bottom: 1em;
-      order: 1;
-    }
-
-    .menu-bajo-cabecera ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.7em;
-    }
-
-    .menu-bajo-cabecera ul li a {
-      text-decoration: none;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      white-space: nowrap;
-      display: inline-block;
-    }
-
-    .menu-bajo-cabecera ul li a:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .header-text {
-      z-index: 2;
-      margin-bottom: 1.5em;
-      order: 2;
     }
 
     .header-text h1 {
@@ -81,28 +42,60 @@
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }
 
-    /* Cambiar orden en móvil */
-    @media screen and (max-width: 600px) {
-      .menu-bajo-cabecera {
-        order: 2;
-      }
+    .navbar {
+      margin-top: 1em;
+      text-align: center;
+    }
 
-      .header-text {
-        order: 1;
-      }
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.7em;
+      flex-wrap: wrap;
+    }
 
-      .header-text h1 {
-        font-size: 1.8em;
-      }
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      white-space: nowrap;
+    }
 
-      .header-text p {
-        font-size: 1em;
-      }
+    .navbar ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
 
-      .menu-bajo-cabecera ul {
+    .hamburger {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      margin-bottom: 0.5em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
         gap: 0.5em;
+        margin-top: 1em;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: inline-block;
       }
     }
 
@@ -128,24 +121,21 @@
 <body>
 
   <header class="site-header">
-    <div class="header-content">
-      <!-- Menú -->
-      <div class="menu-bajo-cabecera">
-        <ul>
-          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Título y descripción -->
-      <div class="header-text">
-        <h1>{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
-      </div>
+    <div class="header-text">
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.description }}</p>
     </div>
+
+    <nav class="navbar">
+      <button class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('show')">☰</button>
+      <ul>
+        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="container">
@@ -168,3 +158,4 @@
 
 </body>
 </html>
+
