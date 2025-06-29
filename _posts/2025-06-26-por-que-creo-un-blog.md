@@ -22,7 +22,10 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 <script src="https://utteranc.es/client.js"
         repo="lmendezotero/lmendezotero.github.io"
         issue-term="pathname"
-        theme="github-light"
+        theme="light"
         crossorigin="anonymous"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-input-position="bottom"
         async>
 </script>
