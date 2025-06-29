@@ -1,18 +1,24 @@
-/* Reset y base */
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   color: #1D5F5B;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #239A94;
 }
+
+/* Enlaces generales */
+/* 
+a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+*/
 
 /* Enlaces en posts y sidebar con colores personalizados */
 .main-content a,
@@ -27,25 +33,19 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-/* Header con imagen */
-
 .site-header {
   position: relative;
-  height: 220px; /* ajusta la altura si quieres */
-  margin-bottom: 30px;
+  width: 100%;
+  height: 220px; /* Puedes ajustar la altura */
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .header-background img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.7); /* oscurece la imagen para que el texto resalte */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
 }
 
 .header-text {
@@ -56,128 +56,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-  z-index: 10;
+  z-index: 2;
 }
 
 .header-text h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2em;
   color: #ffffff;
 }
 
 .header-text p {
-  margin: 0.2em 0 0;
+  margin: 8px 0 0;
   font-size: 1.2em;
   color: #ffffff;
 }
 
-/* Navbar */
-
-.navbar {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  z-index: 20;
-  text-align: right;
-}
-
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 0.7em;
-  flex-wrap: nowrap;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 0.5em 1em;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  white-space: nowrap;
-}
-
-.navbar ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Botón hamburguesa */
-
-.hamburger {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  color: black;
-  border-radius: 6px;
-  padding: 0.1em 0.4em;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-.hamburger:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Responsive - móvil */
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    top: 0.7em;
-    right: 0.7em;
-  }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al botón hamburguesa */
-    border-radius: 10px;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 75vw;
-    max-width: 300px;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-  .navbar ul li {
-    margin: 0.5em 0;
-    width: 100%;
-  }
-
-  /* Enlaces menú hamburguesa más claritos */
-  .navbar ul li a {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #e0f7f7;
-  }
-
-  .navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #ffffff;
-  }
-
-  .hamburger {
-    display: inline-block;
-  }
-}
-
-/* Contenedor general */
-
+/* NUEVO: contenedor centrado */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -185,7 +79,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Ajuste interno */
-
 .layout-wrapper {
   display: flex;
   gap: 40px;
@@ -197,7 +90,54 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 20px;
 }
 
-/* Footer */
+/* Sidebar derecho que ya no necesitamos */
+/* 
+.sidebar-right {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.sidebar-right li {
+  margin-bottom: 12px;
+}
+*/
+
+.menu-bajo-cabecera {
+  text-align: center;
+  margin: 30px auto 10px;
+}
+
+.menu-bajo-cabecera ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-bajo-cabecera li {
+  display: inline-block;
+}
+
+.menu-bajo-cabecera a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e0f7f7;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #1D5F5B;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid #1D5F5B20;
+}
+
+.menu-bajo-cabecera a:hover {
+  background-color: #cceeee;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
 .site-footer {
   text-align: right;
