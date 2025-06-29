@@ -148,6 +148,26 @@ a:hover {
   border-top: 1px solid #ccc;
 }
 
+/* Footer sticky para que esté siempre abajo */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
 .site-footer .highlight {
   color: #239A94;
   font-weight: bold;
