@@ -12,18 +12,32 @@ permalink: /2025-06-28-introduccion-agentes-ia/
 
 Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
+
+
+<!-- Botón de reacciones (LikeBtn) -->
+<div style="margin-top: 3em; margin-bottom: 2em;">
+  <strong>¿Te ha gustado?</strong><br>
+  <span class="likebtn-wrapper"
+        data-identifier="{{ page.slug | default: page.url }}"
+        data-theme="pill"
+        data-lang="es"
+        data-white_label="true"></span>
+</div>
+
+<script src="//w.likebtn.com/js/w/widget.js" async></script>
+
+<!-- Blqoue de Comentarios (Giscus) -->
+<div id="giscus_thread" style="margin-top: 2em;"></div>
 <script src="https://giscus.app/client.js"
         data-repo="lmendezotero/lmendezotero.github.io"
-        data-repo-id="R_kgDOPDXhXw"
-        data-category-id="DIC_kwDOPDXhX84CsMfr"
+        data-repo-id="REPO_ID"
+        data-category="Comentarios"
+        data-category-id="CATEGORIA_ID"
         data-mapping="pathname"
-        data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
-        data-input-position="top"
+        data-input-position="bottom"
         data-theme="light"
-        data-lang="es"
-        data-loading="lazy"
         crossorigin="anonymous"
         async>
 </script>
