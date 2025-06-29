@@ -16,7 +16,7 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
 <!-- Botón de reacciones (LikeBtn) -->
 <div style="margin-top: 3em; margin-bottom: 2em;">
-  <strong>¿Te ha gustado?</strong><br>
+  <strong>¿Qué te ha parecido la publicación??</strong><br>
   <span class="likebtn-wrapper"
         data-identifier="{{ page.slug | default: page.url }}"
         data-theme="pill"
@@ -34,7 +34,7 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
         data-category="Comentarios"
         data-category-id="CATEGORIA_ID"
         data-mapping="pathname"
-        data-reactions-enabled="1"
+        data-reactions-enabled="0"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="light"
