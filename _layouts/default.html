@@ -7,14 +7,139 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .site-header {
+      position: relative;
+      background-image: url('{{ site.logo | relative_url }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2em 1em 1em;
+      color: white;
+      text-align: center;
+    }
+
+    .header-text h1 {
+      margin: 0.2em 0;
+      font-size: 2.5em;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-text p {
+      margin: 0.2em 0 0;
+      font-size: 1.2em;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar {
+      margin-top: 1em;
+      text-align: center;
+      position: relative;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.7em;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      white-space: nowrap;
+    }
+
+    .navbar ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      position: absolute;
+      left: 1em;
+      top: 0.3em;
+      z-index: 1000;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al boton hamburguesa */
+        border-radius: 10px;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        /* elimino height 100vh para que no se centre verticalmente */
+        overflow-y: auto;
+        z-index: 999;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin: 0.5em 0;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: inline-block;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5em;
+    }
+
+    .site-footer {
+      text-align: center;
+      margin-top: 3em;
+      padding: 2em 1em;
+      background-color: #f4f4f4;
+      font-size: 0.9em;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="header-background">
-      <img src="{{ site.logo | relative_url }}" alt="Foto de cabecera">
-    </div>
-
     <div class="header-text">
       <h1>{{ site.title }}</h1>
       <p>{{ site.description }}</p>
