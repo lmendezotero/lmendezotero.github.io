@@ -91,6 +91,8 @@ a:hover {
   border-right: 1px solid #ccc;
 }
 
+/* Sidebar derecho que ya no necesitamos */
+/* 
 .sidebar-right {
   flex: 1;
   padding-left: 20px;
@@ -98,6 +100,44 @@ a:hover {
 
 .sidebar-right li {
   margin-bottom: 12px;
+}
+*/
+
+.menu-bajo-cabecera {
+  text-align: center;
+  margin: 30px auto 10px;
+}
+
+.menu-bajo-cabecera ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-bajo-cabecera li {
+  display: inline-block;
+}
+
+.menu-bajo-cabecera a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e0f7f7;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #1D5F5B;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid #1D5F5B20;
+}
+
+.menu-bajo-cabecera a:hover {
+  background-color: #cceeee;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .site-footer {
