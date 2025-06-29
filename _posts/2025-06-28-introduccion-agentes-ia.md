@@ -16,7 +16,7 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
 <!-- Botón de reacciones (LikeBtn) -->
 <div style="margin-top: 3em; margin-bottom: 2em;">
-  <p style="font-weight: normal; font-size: 1rem; margin-bottom: 1.2em; color: #333;">
+  <p style="font-weight: normal; font-size: 1rem; margin-bottom: 1.2em; color: #1D5F5B;">
     ¿Te ha gustado la publicación? ¡Déjame un like para saberlo! Si tienes cuenta de GitHub, no dudes en compartir tu opinión con un comentario. ¡Muchas gracias!
   </p>
   <span class="likebtn-wrapper"
