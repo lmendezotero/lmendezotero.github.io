@@ -13,10 +13,21 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       font-family: 'Roboto', sans-serif;
       overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      flex: 1 0 auto;
     }
 
     .site-header {
@@ -92,14 +103,13 @@
         flex-direction: column;
         align-items: flex-start;
         background-color: rgba(0, 0, 0, 0.8);
-        padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al boton hamburguesa */
+        padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al botón hamburguesa */
         border-radius: 10px;
         margin: 0;
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
-        /* elimino height 100vh para que no se centre verticalmente */
         overflow-y: auto;
         z-index: 999;
       }
@@ -121,10 +131,11 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 1.5 em;
+      padding: 1.5em; /* corregido el espacio extra */
     }
 
     .site-footer {
+      flex-shrink: 0;
       text-align: center;
       margin-top: 3em;
       padding: 2em 1em;
@@ -139,32 +150,34 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-text">
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
-    </div>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-text">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+      </div>
 
-    <nav class="navbar">
-      <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
-      <ul>
-        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+      <nav class="navbar">
+        <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <div class="container">
-    <div class="layout-wrapper">
-      <main class="main-content">
-        {{ content }}
-        {% if page.layout == "post" or page.categories %}
-          {% include comments-and-likes.html %}
-        {% endif %}
-      </main>
+    <div class="container">
+      <div class="layout-wrapper">
+        <main class="main-content">
+          {{ content }}
+          {% if page.layout == "post" or page.categories %}
+            {% include comments-and-likes.html %}
+          {% endif %}
+        </main>
+      </div>
     </div>
   </div>
 
