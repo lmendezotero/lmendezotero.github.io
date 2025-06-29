@@ -9,35 +9,42 @@
   {% seo %}
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
     .site-header {
       position: relative;
-      height: 350px;
       background-image: url('{{ site.logo | relative_url }}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      padding: 2em 1em 1em;
+      color: white;
+      text-align: center;
+    }
+
+    .header-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 1.5em;
-      color: white;
-      text-align: center;
     }
 
     .menu-bajo-cabecera {
       z-index: 2;
       margin-bottom: 1em;
+      order: 1;
     }
 
     .menu-bajo-cabecera ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1em;
+      gap: 0.7em;
     }
 
     .menu-bajo-cabecera ul li a {
@@ -49,6 +56,7 @@
       font-weight: 600;
       transition: background-color 0.3s;
       white-space: nowrap;
+      display: inline-block;
     }
 
     .menu-bajo-cabecera ul li a:hover {
@@ -57,11 +65,12 @@
 
     .header-text {
       z-index: 2;
-      margin-top: 1.2em;
+      margin-bottom: 1.5em;
+      order: 2;
     }
 
     .header-text h1 {
-      margin: 0.2em 0 0;
+      margin: 0.2em 0;
       font-size: 2.5em;
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
     }
@@ -72,20 +81,14 @@
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }
 
-    /* RESPONSIVE PARA MÓVILES */
+    /* Cambiar orden en móvil */
     @media screen and (max-width: 600px) {
-      .site-header {
-        height: auto;
-        padding: 1.2em 1em;
-      }
-
-      .menu-bajo-cabecera ul {
-        flex-direction: column;
-        gap: 0.6em;
-      }
-
       .menu-bajo-cabecera {
-        margin-bottom: 1.2em;
+        order: 2;
+      }
+
+      .header-text {
+        order: 1;
       }
 
       .header-text h1 {
@@ -95,31 +98,56 @@
       .header-text p {
         font-size: 1em;
       }
+
+      .menu-bajo-cabecera ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5em;
+    }
+
+    .site-footer {
+      text-align: center;
+      margin-top: 3em;
+      padding: 2em 1em;
+      background-color: #f4f4f4;
+      font-size: 0.9em;
+    }
+
+    .highlight {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
   <header class="site-header">
-    <!-- Menú de navegación -->
-    <div class="menu-bajo-cabecera">
-      <ul>
-        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-      </ul>
-    </div>
+    <div class="header-content">
+      <!-- Menú -->
+      <div class="menu-bajo-cabecera">
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+        </ul>
+      </div>
 
-    <!-- Título del sitio -->
-    <div class="header-text">
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
+      <!-- Título y descripción -->
+      <div class="header-text">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+      </div>
     </div>
   </header>
 
-  <!-- Contenido principal de la página -->
   <div class="container">
     <div class="layout-wrapper">
       <main class="main-content">
