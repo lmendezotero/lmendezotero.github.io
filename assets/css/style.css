@@ -160,15 +160,14 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  flex: 1 0 auto;
+.page-wrapper {
+  flex: 1 0 auto; /* Este contenedor crecerá para ocupar el espacio */
 }
 
 .site-footer {
-  flex-shrink: 0;
-}
-
-.site-footer .highlight {
-  color: #239A94;
-  font-weight: bold;
+  flex-shrink: 0; /* El footer no se encoge y se mantiene abajo */
+  text-align: center;
+  padding: 2em 1em;
+  background-color: #f4f4f4;
+  font-size: 0.9em;
 }
