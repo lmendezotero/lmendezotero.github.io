@@ -92,14 +92,14 @@
         flex-direction: column;
         align-items: flex-start;
         background-color: rgba(0, 0, 0, 0.8);
-        padding: 1em;
+        padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al boton hamburguesa */
         border-radius: 10px;
-        margin-top: 3.5em;
+        margin: 0;
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        /* elimino height 100vh para que no se centre verticalmente */
         overflow-y: auto;
         z-index: 999;
       }
@@ -110,6 +110,7 @@
 
       .navbar ul li {
         margin: 0.5em 0;
+        width: 100%;
       }
 
       .hamburger {
@@ -145,7 +146,7 @@
     </div>
 
     <nav class="navbar">
-      <button class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('show')">☰</button>
+      <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
       <ul>
         <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
         <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
