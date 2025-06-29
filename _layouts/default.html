@@ -14,37 +14,21 @@
       color: white;
       text-align: center;
       height: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      background-image: url('{{ site.logo | relative_url }}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-image: url('{{ site.logo | relative_url }}');
-    }
-
-    .header-text {
-      position: relative;
-      z-index: 2;
-    }
-
-    .header-text h1 {
-      margin: 0.2em 0 0;
-      font-size: 2.5em;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    }
-
-    .header-text p {
-      margin: 0.2em 0 1em;
-      font-size: 1.2em;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 1em;
     }
 
     .menu-bajo-cabecera {
       position: relative;
       z-index: 2;
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
     }
 
     .menu-bajo-cabecera ul {
@@ -70,12 +54,30 @@
     .menu-bajo-cabecera ul li a:hover {
       background-color: rgba(0, 0, 0, 0.7);
     }
+
+    .header-text {
+      position: relative;
+      z-index: 2;
+      margin-top: 1em;
+    }
+
+    .header-text h1 {
+      margin: 0.2em 0 0;
+      font-size: 2.5em;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-text p {
+      margin: 0.2em 0 0;
+      font-size: 1.2em;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
   </style>
 </head>
 <body>
 
   <header class="site-header">
-    <!-- Menú y cabecera superpuestos -->
+    <!-- Menú de botones arriba -->
     <div class="menu-bajo-cabecera">
       <ul>
         <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
@@ -86,6 +88,7 @@
       </ul>
     </div>
 
+    <!-- Título y descripción debajo del menú -->
     <div class="header-text">
       <h1>{{ site.title }}</h1>
       <p>{{ site.description }}</p>
