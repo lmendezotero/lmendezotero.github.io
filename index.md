@@ -10,7 +10,7 @@ title: Inicio
     <li style="margin-bottom: 1em;">
       <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong><br>
       {{ post.date | date: "%d %b %Y" }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}<br>
-      <em>Categoría: {{ post.categories | join: "  " }}</em>
+      <em>{{ post.categories | join: "  " }}</em>
     </li>
   {% endfor %}
 </ul>
