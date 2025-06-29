@@ -20,26 +20,28 @@
     </div>
   </header>
 
+  <!-- Menú de botones centrado debajo de la cabecera -->
+  <div class="container">
+    <div class="menu-bajo-cabecera">
+      <ul>
+        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contenido principal de la página -->
   <div class="container">
     <div class="layout-wrapper">
-
       <main class="main-content">
         {{ content }}
         {% if page.layout == "post" or page.categories %}
           {% include comments-and-likes.html %}
         {% endif %}
       </main>
-      
-      <div class="menu-bajo-cabecera">
-        <ul>
-          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-        </ul>
-      </div>
-      
     </div>
   </div>
 
