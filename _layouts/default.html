@@ -48,6 +48,7 @@
       position: relative;
     }
 
+    /* Menú normal en desktop */
     .navbar ul {
       list-style: none;
       padding: 0;
@@ -83,7 +84,7 @@
       position: absolute;
       left: 1em;
       top: 0.3em;
-      z-index: 1000;
+      z-index: 1100;
     }
 
     @media screen and (max-width: 768px) {
@@ -91,17 +92,16 @@
         display: none;
         flex-direction: column;
         align-items: flex-start;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al boton hamburguesa */
-        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 3.5em 1.5em 1em 1.5em; /* espacio arriba para hamburguesa */
         margin: 0;
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
-        /* elimino height 100vh para que no se centre verticalmente */
+        height: 100vh; /* ocupa toda la pantalla */
         overflow-y: auto;
-        z-index: 999;
+        z-index: 1000;
       }
 
       .navbar ul.show {
@@ -109,8 +109,15 @@
       }
 
       .navbar ul li {
-        margin: 0.5em 0;
+        margin: 0.8em 0;
         width: 100%;
+      }
+
+      .navbar ul li a {
+        display: block;
+        width: 100%;
+        padding-left: 0.5em;
+        font-size: 1.2em;
       }
 
       .hamburger {
@@ -145,9 +152,12 @@
       <p>{{ site.description }}</p>
     </div>
 
-    <nav class="navbar">
-      <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
-      <ul>
+    <nav class="navbar" role="navigation" aria-label="Menú principal">
+      <button class="hamburger" aria-label="Mostrar menú" aria-expanded="false" aria-controls="menu-principal"
+        onclick="toggleMenu(this)">
+        &#9776;
+      </button>
+      <ul id="menu-principal">
         <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
         <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
         <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
@@ -174,6 +184,15 @@
       Hospedado en <strong class="highlight">GitHub Pages</strong>.
     </p>
   </footer>
+
+  <script>
+    function toggleMenu(button) {
+      const menu = document.getElementById('menu-principal');
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>
