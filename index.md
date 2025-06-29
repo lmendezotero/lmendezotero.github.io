@@ -16,7 +16,7 @@ title: Inicio
             {% for category in post.categories %}
               <span style="
                 display: inline-block;
-                background-color: #007bff;
+                background-color: #1D5F5B;
                 color: white;
                 padding: 3px 8px;
                 border-radius: 12px;
