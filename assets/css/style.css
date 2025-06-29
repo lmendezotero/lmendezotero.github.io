@@ -27,19 +27,25 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-/* Header con imagen de fondo */
+/* Header con imagen */
+
 .site-header {
   position: relative;
-  background-image: url('../{{ site.logo }}');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2em 1em 1em;
-  color: white;
-  text-align: center;
   height: 220px; /* ajusta la altura si quieres */
-  overflow: hidden;
   margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.header-background img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7); /* oscurece la imagen para que el texto resalte */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .header-text {
@@ -50,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 10;
 }
 
 .header-text h1 {
@@ -68,10 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar */
 
 .navbar {
-  margin-top: 1em;
-  text-align: center;
-  position: relative;
-  z-index: 10; /* para que esté sobre el header-text si es necesario */
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 20;
+  text-align: right;
 }
 
 .navbar ul {
@@ -79,9 +86,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
   gap: 0.7em;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .navbar ul li a {
@@ -108,10 +114,6 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.7);
   border: none;
   color: black;
-  position: absolute;
-  left: 1em;
-  top: 0.3em;
-  z-index: 1000;
   border-radius: 6px;
   padding: 0.1em 0.4em;
   backdrop-filter: blur(5px);
@@ -126,6 +128,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive - móvil */
 
 @media screen and (max-width: 768px) {
+  .navbar {
+    top: 0.7em;
+    right: 0.7em;
+  }
+
   .navbar ul {
     display: none;
     flex-direction: column;
@@ -136,8 +143,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: 0;
+    width: 75vw;
+    max-width: 300px;
+    height: 100vh;
     overflow-y: auto;
     z-index: 999;
   }
@@ -187,47 +196,6 @@ h1, h2, h3, h4, h5, h6 {
   flex: 2;
   padding-right: 20px;
 }
-
-/* Botones de menú bajo cabecera - si no los usas ya puedes eliminar */
-
-/*
-.menu-bajo-cabecera {
-  text-align: center;
-  margin: 30px auto 10px;
-}
-
-.menu-bajo-cabecera ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.menu-bajo-cabecera li {
-  display: inline-block;
-}
-
-.menu-bajo-cabecera a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e0f7f7;
-  border-radius: 8px;
-  font-weight: 500;
-  color: #1D5F5B;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1px solid #1D5F5B20;
-}
-
-.menu-bajo-cabecera a:hover {
-  background-color: #cceeee;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-*/
 
 /* Footer */
 
