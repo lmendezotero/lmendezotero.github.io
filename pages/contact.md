@@ -4,6 +4,8 @@ title: "Contacto"
 permalink: /contact/
 ---
 
+<div style="padding: 1.5em; margin: 2em 0;">
+
 ## 📬 ¡Hablemos!
 
 ¿Tienes alguna idea, proyecto o colaboración en la que pueda ayudarte?  
@@ -19,8 +21,8 @@ Siempre estoy encantada y abierta a colaborar, aprender cosas nuevas o ayudarte 
 
 ## 📍 Ubicación
 
-Actualmente trabajando en remoto desde **Pontevedra, Galicia**.  
-
-
+Actualmente trabajando en remoto desde **Pontevedra, Galicia**.  <br><br>
 
 🙏🏻 Muchas gracias por visitar mi blog. Si algo te gustó, ¡no dudes en escribirme!
+
+</div>
