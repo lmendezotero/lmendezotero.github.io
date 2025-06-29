@@ -25,6 +25,9 @@
 
       <main class="main-content">
         {{ content }}
+        {% if page.layout == "post" or page.categories %}
+          {% include comments-and-likes.html %}
+        {% endif %}
       </main>
 
       <aside class="sidebar-right">
