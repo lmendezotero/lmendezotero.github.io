@@ -14,24 +14,24 @@
     <div class="header-background">
       <img src="{{ site.logo | relative_url }}" alt="Foto de cabecera">
     </div>
+
+    <div class="container">
+      <div class="menu-bajo-cabecera" style="margin-bottom: 1em;">
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="header-text">
       <h1>{{ site.title }}</h1>
       <p>{{ site.description }}</p>
     </div>
   </header>
-
-  <!-- Menú de botones centrado debajo de la cabecera -->
-  <div class="container">
-    <div class="menu-bajo-cabecera">
-      <ul>
-        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Ponencias y Colaboraciones</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
 
   <!-- Contenido principal de la página -->
   <div class="container">
