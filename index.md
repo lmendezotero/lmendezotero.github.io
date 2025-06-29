@@ -12,8 +12,8 @@ title: Inicio
       {{ post.date | date: "%d %b %Y" }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}
       <div style="margin-top: 0.4em;">
         {% if post.categories %}
-          <span style="font-weight: 600; color: #333;">
-            {{ post.categories | join: "    |    " }}
+          <span style="font-weight: 600; color: #333; font-size: 0.9em;">
+            {{ post.categories | join: "  |  " }}
           </span>
         {% endif %}
       </div>
