@@ -16,7 +16,9 @@ Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
 <!-- Botón de reacciones (LikeBtn) -->
 <div style="margin-top: 3em; margin-bottom: 2em;">
-  <strong>¿Qué te ha parecido la publicación??</strong><br>
+  <p style="font-weight: 600; margin-bottom: 1em;">
+    ¿Te ha gustado la publicación? ¡Déjame un like para saberlo! Si tienes cuenta de GitHub, no dudes en compartir tu opinión con un comentario. ¡Muchas gracias!
+  </p>
   <span class="likebtn-wrapper"
         data-identifier="{{ page.slug | default: page.url }}"
         data-theme="pill"
