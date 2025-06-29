@@ -7,6 +7,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
+  <style>
+    /* Aseguramos que header-text esté encima */
+    .header-text {
+      position: relative;
+      z-index: 10;
+      color: white; /* Para que se vea bien sobre la imagen */
+      text-align: center;
+      padding: 1em;
+    }
+
+    /* Estilo del menú dentro del header */
+    .header-text .menu-bajo-cabecera ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1em 0;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    .header-text .menu-bajo-cabecera ul li a {
+      text-decoration: none;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .header-text .menu-bajo-cabecera ul li a:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Asegúrate que la imagen ocupe todo el header y que header tenga posición relativa */
+    .site-header {
+      position: relative;
+    }
+
+    .header-background img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,8 +60,9 @@
       <img src="{{ site.logo | relative_url }}" alt="Foto de cabecera">
     </div>
 
-    <div class="container">
-      <div class="menu-bajo-cabecera" style="margin-bottom: 1em;">
+    <div class="header-text">
+      <!-- Menú dentro del header-text para superponerse -->
+      <div class="menu-bajo-cabecera">
         <ul>
           <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
           <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
@@ -25,9 +71,7 @@
           <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
         </ul>
       </div>
-    </div>
 
-    <div class="header-text">
       <h1>{{ site.title }}</h1>
       <p>{{ site.description }}</p>
     </div>
