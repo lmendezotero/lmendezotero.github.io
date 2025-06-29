@@ -1,24 +1,18 @@
+/* Reset y base */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   color: #1D5F5B;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #239A94;
 }
-
-/* Enlaces generales */
-/* 
-a {
-  text-decoration: none;
-  color: #007acc;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-*/
 
 /* Enlaces en posts y sidebar con colores personalizados */
 .main-content a,
@@ -33,19 +27,19 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Header con imagen de fondo */
 .site-header {
   position: relative;
-  width: 100%;
-  height: 220px; /* Puedes ajustar la altura */
+  background-image: url('../{{ site.logo }}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2em 1em 1em;
+  color: white;
+  text-align: center;
+  height: 220px; /* ajusta la altura si quieres */
   overflow: hidden;
   margin-bottom: 30px;
-}
-
-.header-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .header-text {
@@ -61,17 +55,120 @@ a:hover {
 
 .header-text h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 2.5em;
   color: #ffffff;
 }
 
 .header-text p {
-  margin: 8px 0 0;
+  margin: 0.2em 0 0;
   font-size: 1.2em;
   color: #ffffff;
 }
 
-/* NUEVO: contenedor centrado */
+/* Navbar */
+
+.navbar {
+  margin-top: 1em;
+  text-align: center;
+  position: relative;
+  z-index: 10; /* para que esté sobre el header-text si es necesario */
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.7em;
+  flex-wrap: wrap;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.navbar ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Botón hamburguesa */
+
+.hamburger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: black;
+  position: absolute;
+  left: 1em;
+  top: 0.3em;
+  z-index: 1000;
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive - móvil */
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 3.5em 1em 1em 1em; /* padding top para dejar espacio al botón hamburguesa */
+    border-radius: 10px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin: 0.5em 0;
+    width: 100%;
+  }
+
+  /* Enlaces menú hamburguesa más claritos */
+  .navbar ul li a {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e0f7f7;
+  }
+
+  .navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+}
+
+/* Contenedor general */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -79,6 +176,7 @@ a:hover {
 }
 
 /* Ajuste interno */
+
 .layout-wrapper {
   display: flex;
   gap: 40px;
@@ -90,18 +188,9 @@ a:hover {
   padding-right: 20px;
 }
 
-/* Sidebar derecho que ya no necesitamos */
-/* 
-.sidebar-right {
-  flex: 1;
-  padding-left: 20px;
-}
+/* Botones de menú bajo cabecera - si no los usas ya puedes eliminar */
 
-.sidebar-right li {
-  margin-bottom: 12px;
-}
-*/
-
+/*
 .menu-bajo-cabecera {
   text-align: center;
   margin: 30px auto 10px;
@@ -138,6 +227,9 @@ a:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+*/
+
+/* Footer */
 
 .site-footer {
   text-align: right;
