@@ -27,6 +27,9 @@
       </header>
       <main class="container">
         {{ content }}
+        {% if page.layout == "post" or page.categories %}
+          {% include comments-and-likes.html %}
+        {% endif %}
       </main>
     </div>
     <footer class="site-footer">
