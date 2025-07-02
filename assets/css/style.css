@@ -287,3 +287,37 @@ body {
     background-position: center !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .site-header {
+    min-height: 30vh !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .header-text p {
+    font-size: 1rem !important;
+  }
+}
+
+/*nuevo bloque*/
+
+@media screen and (max-width: 768px) {
+  .site-header {
+    min-height: 30vh !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .header-text p {
+    font-size: 1rem !important;
+  }
+}
