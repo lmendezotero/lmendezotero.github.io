@@ -139,18 +139,30 @@ body {
   font-weight: bold;
 }
 
-/* Estilo para títulos de publicaciones */
+/* Elevar ligeramente el título y subtítulo en cabecera */
+@media screen and (min-width: 769px) {
+  .header-text {
+    top: 45%; /* antes estaba en 50% */
+  }
+}
+
+/* Colores para títulos y metadatos de las entradas */
 .post-title a {
   color: #239A94;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .post-title a:hover {
   text-decoration: underline;
 }
 
-/* Estilo para fecha y subtítulos */
-.post-meta,
+.post-meta {
+  color: #1D5F5B;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
 .post-excerpt {
   color: #1D5F5B;
 }
