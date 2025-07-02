@@ -146,7 +146,22 @@ body {
   }
 }
 
-/* Colores para títulos y metadatos de las entradas */
+/* ------------------------------ */
+/* Blog: colores y estilos posts */
+/* ------------------------------ */
+
+/* Lista de posts */
+.post-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Cada entrada */
+.post-item {
+  margin-bottom: 1.5em;
+}
+
+/* Título del post */
 .post-title a {
   color: #239A94;
   text-decoration: none;
@@ -157,12 +172,27 @@ body {
   text-decoration: underline;
 }
 
+/* Fecha y subtítulo */
 .post-meta {
   color: #1D5F5B;
   font-size: 0.95em;
   margin-bottom: 0.5em;
 }
 
+/* Texto adicional, si lo usas */
 .post-excerpt {
   color: #1D5F5B;
+}
+
+/* Etiquetas de categoría */
+.category-badge {
+  display: inline-block;
+  background-color: #1D5F5B;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-right: 5px;
+  user-select: none;
 }
