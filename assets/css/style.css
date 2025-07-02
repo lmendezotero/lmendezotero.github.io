@@ -338,3 +338,27 @@ body {
   color: #239A94;
   font-weight: bold;
 }
+
+
+/* ----------------------------- */
+/* Formato específico para los posts */
+/* ----------------------------- */
+
+/* Color general para todo el contenido del post */
+.post-content {
+  color: #1D5F5B;
+  line-height: 1.6;
+}
+
+/* Colores específicos para títulos */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: #239A94;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
