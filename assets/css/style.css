@@ -327,3 +327,8 @@ body {
     font-size: 1rem !important;
   }
 }
+
+.footer-highlight {
+  color: #239A94;
+  font-weight: bold;
+}
