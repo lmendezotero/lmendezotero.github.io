@@ -30,19 +30,21 @@ body {
 }
 
 .header-text h1 {
-  margin: 0.2em 0;
+  margin: 0.1em 0;
   font-size: 2.5em;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .header-text p {
-  margin: 0.2em 0 0;
+  margin: 0.1em 0 0;
   font-size: 1.2em;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .header-text {
-  margin-bottom: 0.5em; /* Ajusta el valor si quieres más separación */
+  margin-bottom: 0.5em;
+  position: relative;
+  top: -5px; /* Eleva un poco en modo escritorio */
 }
 
 .navbar {
@@ -139,29 +141,24 @@ body {
   font-weight: bold;
 }
 
-/* Elevar ligeramente el título y subtítulo en cabecera */
-@media screen and (min-width: 769px) {
-  .header-text {
-    top: 45%; /* antes estaba en 50% */
-  }
-}
-
 /* ------------------------------ */
 /* Blog: colores y estilos posts */
 /* ------------------------------ */
 
-/* Lista de posts */
 .post-list {
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
-/* Cada entrada */
 .post-item {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.8em;
 }
 
-/* Título del post */
+.post-title {
+  margin-bottom: 0.2em;
+}
+
 .post-title a {
   color: #239A94;
   text-decoration: none;
@@ -172,19 +169,16 @@ body {
   text-decoration: underline;
 }
 
-/* Fecha y subtítulo */
 .post-meta {
   color: #1D5F5B;
   font-size: 0.95em;
-  margin-bottom: 0.5em;
+  margin-top: 0;
 }
 
-/* Texto adicional, si lo usas */
-.post-excerpt {
-  color: #1D5F5B;
+.post-categories {
+  margin-top: 0.4em;
 }
 
-/* Etiquetas de categoría */
 .category-badge {
   display: inline-block;
   background-color: #1D5F5B;
