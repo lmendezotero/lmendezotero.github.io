@@ -41,10 +41,14 @@
 
     <script>
       // Cerrar el menú hamburguesa al volver atrás
-      document.addEventListener("pageshow", function (event) {
+      document.addEventListener('DOMContentLoaded', function () {
         document.querySelector(".navbar ul").classList.remove("show");
       });
-
+      // También cerrar menú al volver atrás (navegadores con bfcache)
+      window.addEventListener('pageshow', function () {
+        document.querySelector('.navbar ul').classList.remove('show');
+      });
+      // Toggle hamburguesa
       document.querySelector('.hamburger').addEventListener('click', function() {
         document.querySelector('.navbar ul').classList.toggle('show');
       });
