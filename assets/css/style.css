@@ -227,3 +227,63 @@ body {
   left: 1em; /* <-- lo movemos a la izquierda */
   z-index: 2000;
 }
+
+/* Solo para pantallas de máximo 768px (móviles) */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* ocupa toda la altura de la pantalla */
+    background-color: rgba(0, 0, 0, 0.9); /* fondo oscuro con transparencia */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    display: none;
+    z-index: 1000;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li a {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .header-text {
+    text-align: center;
+    padding: 6rem 1rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .header-text p {
+    font-size: 1rem;
+  }
+
+  .site-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
