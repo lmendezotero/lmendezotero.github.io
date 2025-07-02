@@ -1,69 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>{{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  {% seo %}
-</head>
-<body>
-
-  <div class="page-wrapper">
-    <header class="site-header" style="background-image: url('{{ site.logo | relative_url }}');">
-      <div class="header-text">
-        <h1>{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
-      </div>
-    </header>
-
-    <!-- Botón hamburguesa FUERA del nav -->
-    <button 
-      class="hamburger" 
-      aria-label="Mostrar menú" 
-      aria-expanded="false"
-      onclick="
-        const menu = document.querySelector('.navbar ul');
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        menu.classList.toggle('show');
-      ">
-      &#9776;
-    </button>
-
-    <nav class="navbar">
-      <ul>
-        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Colaboraciones</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-      </ul>
-    </nav>
-
-    <div class="container">
-      <div class="layout-wrapper">
-        <main class="main-content">
-          
-          <article class="post-content">
-            {{ content }}
-          </article>
-
-          {% if page.layout == "post" or page.categories %}
-            {% include comments-and-likes.html %}
-          {% endif %}
-        </main>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header" style="background-image: url('{{ site.header_image | relative_url }}');">
+        <button class="hamburger">&#9776;</button>
+        <div class="header-text">
+          <h1>{{ site.title }}</h1>
+          <p>{{ site.description }}</p>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Sobre mí</a></li>
+            <li><a href="{{ '/educacion/' | relative_url }}">Educación</a></li>
+            <li><a href="{{ '/carrera-profesional/' | relative_url }}">Carrera Profesional</a></li>
+            <li><a href="{{ '/colaboraciones/' | relative_url }}">Colaboraciones</a></li>
+            <li><a href="{{ '/contacto/' | relative_url }}">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="container">
+        {{ content }}
+      </main>
     </div>
-  </div>
-
-  <footer class="site-footer">
-    <p>
-      Creado por <strong class="highlight">Lorena Méndez</strong>.
-      Hospedado en <strong class="highlight">GitHub Pages</strong>.
-    </p>
-  </footer>
-
-</body>
+    <footer class="site-footer">
+      <p>Creado por <span class="highlight">{{ site.author }}</span>. Hospedado en <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+    </footer>
+    <script>
+      document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.navbar ul').classList.toggle('show');
+      });
+    </script>
+  </body>
 </html>
