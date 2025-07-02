@@ -7,6 +7,9 @@ url: "https://lmendezotero.github.io"
 baseurl: ""
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  
 highlighter: rouge
 
 paginate: 5
