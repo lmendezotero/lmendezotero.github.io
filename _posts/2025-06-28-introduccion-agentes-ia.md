@@ -7,9 +7,9 @@ layout: default
 permalink: /2025-06-28-introduccion-agentes-ia/
 ---
 
-## ¿Qué son los agentes de IA y por qué están tan de moda? Una pequeña introducción
-{:.post-title-single}
-
+<h2 class="post-title-single">
+  ¿Qué son los agentes de IA y por qué están tan de moda? Una pequeña introducción
+</h2>
 
 Este es tu primer post de blog. Puedes editarlo o eliminarlo.
 
