@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -361,4 +362,9 @@ body {
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 0.5em;
+}
+
+/* Color específico para el primer título en el post */
+.post-title-single {
+  color: #000000;
 }
