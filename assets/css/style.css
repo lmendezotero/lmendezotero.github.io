@@ -78,7 +78,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Botón hamburguesa */
+/* Botón hamburguesa - oculto por defecto en escritorio */
 .hamburger {
   display: none;
   font-size: 2em;
@@ -86,9 +86,6 @@ body {
   background: none;
   border: none;
   color: white;
-  position: absolute;
-  left: 1em;
-  top: 0.3em;
   z-index: 1000;
 }
 
@@ -215,4 +212,15 @@ body {
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 0.5em;
+}
+
+/* ----------------------------- */
+/* Ajustes para botón hamburguesa */
+/* ----------------------------- */
+
+.hamburger {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 2000;
 }
