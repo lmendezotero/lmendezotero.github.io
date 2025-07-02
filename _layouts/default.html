@@ -26,13 +26,9 @@
         </nav>
       </header>
       <main class="container">
-        {% if page.layout == "post" %}
-          <div class="post-content">
-            {{ content }}
-          </div>
-        {% else %}
+        <div class="post-content">
           {{ content }}
-        {% endif %}
+        </div>
 
         {% if page.layout == "post" or page.categories %}
           {% include comments-and-likes.html %}
