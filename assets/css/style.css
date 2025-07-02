@@ -307,10 +307,16 @@ body {
 /*nuevo bloque*/
 
 @media screen and (max-width: 768px) {
-  .site-header {
+  header.site-header,
+  .site-header,
+  .masthead,
+  .page-header {
+    height: 30vh !important;
+    max-height: 30vh !important;
     min-height: 30vh !important;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+    overflow: hidden;
   }
 
   .header-text h1 {
