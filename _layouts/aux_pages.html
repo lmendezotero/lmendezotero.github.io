@@ -12,11 +12,7 @@
       <header class="site-header" style="background-image: url('{{ site.header_image | relative_url }}');">
         <button class="hamburger">&#9776;</button>
         <div class="header-text">
-          {% if page.title %}
-            <h1>{{ page.title }}</h1>
-          {% else %}
-            <h1>{{ site.title }}</h1>
-          {% endif %}
+          <h1>{{ site.title }}</h1>
           <p>{{ site.description }}</p>
         </div>
         <nav class="navbar">
@@ -30,11 +26,9 @@
         </nav>
       </header>
       <main class="container">
-        <div class="page-title">
-          {% if page.title %}
-            <h2>{{ page.title }}</h2>
-          {% endif %}
-        </div>
+        {% if page.title %}
+          <h2>{{ page.title }}</h2>
+        {% endif %}
         <div class="post-content">
           {{ content }}
         </div>
@@ -49,11 +43,9 @@
       document.addEventListener('DOMContentLoaded', function () {
         document.querySelector(".navbar ul").classList.remove("show");
       });
-      // También cerrar menú al volver atrás (navegadores con bfcache)
       window.addEventListener('pageshow', function () {
         document.querySelector('.navbar ul').classList.remove('show');
       });
-      // Toggle hamburguesa
       document.querySelector('.hamburger').addEventListener('click', function() {
         document.querySelector('.navbar ul').classList.toggle('show');
       });
