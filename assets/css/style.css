@@ -341,10 +341,6 @@ body {
 }
 
 
-/* ----------------------------- */
-/* Formato específico para los posts */
-/* ----------------------------- */
-
 /* Color general para todo el contenido del post */
 .post-content {
   color: #1D5F5B;
@@ -365,6 +361,6 @@ body {
 }
 
 /* Color específico para el primer título en el post */
-.post-title-single {
-  color: #000000;
+.post-content .post-title-single {
+  color: #000000 !important;
 }
