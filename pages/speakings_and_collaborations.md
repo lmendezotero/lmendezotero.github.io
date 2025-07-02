@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: aux_pages
 title: "Ponencias y Colaboraciones"
 permalink: /speakings_and_collaborations/
 ---
