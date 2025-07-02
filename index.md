@@ -4,7 +4,7 @@ author_profile: true
 title: Inicio
 ---
 
-<h2>Entradas</h2>
+<h2 class="entradas-title">Entradas</h2>
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="post-item">
