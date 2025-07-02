@@ -40,6 +40,11 @@
     </footer>
 
     <script>
+      // Cerrar el menú hamburguesa al volver atrás
+      document.addEventListener("pageshow", function (event) {
+        document.querySelector(".navbar ul").classList.remove("show");
+      });
+
       document.querySelector('.hamburger').addEventListener('click', function() {
         document.querySelector('.navbar ul').classList.toggle('show');
       });
