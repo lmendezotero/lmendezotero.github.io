@@ -16,29 +16,31 @@
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
       </div>
-
-      <nav class="navbar">
-        <button 
-          class="hamburger" 
-          aria-label="Mostrar menú" 
-          aria-expanded="false"
-          onclick="
-            const menu = document.querySelector('.navbar ul');
-            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-            this.setAttribute('aria-expanded', !expanded);
-            menu.classList.toggle('show');
-          ">
-          &#9776;
-        </button>
-        <ul>
-          <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
-          <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
-          <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
-          <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Colaboraciones</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
-        </ul>
-      </nav>
     </header>
+
+    <!-- Botón hamburguesa FUERA del nav -->
+    <button 
+      class="hamburger" 
+      aria-label="Mostrar menú" 
+      aria-expanded="false"
+      onclick="
+        const menu = document.querySelector('.navbar ul');
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('show');
+      ">
+      &#9776;
+    </button>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
+        <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
+        <li><a href="{{ '/professional_career' | relative_url }}">Carrera Profesional</a></li>
+        <li><a href="{{ '/speakings_and_collaborations' | relative_url }}">Colaboraciones</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">Contacto</a></li>
+      </ul>
+    </nav>
 
     <div class="container">
       <div class="layout-wrapper">
