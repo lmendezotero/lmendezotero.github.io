@@ -194,3 +194,8 @@ body {
 .entradas-title {
   color: #239A94;
 }
+
+.post-content {
+  color: #1D5F5B;
+  line-height: 1.6;
+}
