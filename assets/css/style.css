@@ -1,70 +1,43 @@
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  margin: 0;
-  color: #1D5F5B;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
+* {
+  box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
-  box-sizing: border-box;
+  margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #239A94;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
-.main-content a,
-.sidebar-right a {
-  color: #1D5F5B;
-  text-decoration: none;
-}
-
-.main-content a:hover,
-.sidebar-right a:hover {
-  color: #239A94;
-  text-decoration: underline;
+.page-wrapper {
+  flex: 1 0 auto;
 }
 
 .site-header {
   position: relative;
-  width: 100%;
-  height: 220px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 2em 1em 1em;
   color: white;
   text-align: center;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.header-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #ffffff;
-  text-align: center;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-  z-index: 2;
 }
 
 .header-text h1 {
   margin: 0.2em 0;
   font-size: 2.5em;
-  color: #ffffff;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .header-text p {
   margin: 0.2em 0 0;
   font-size: 1.2em;
-  color: #ffffff;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -118,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 3.5em 1em 1em;
+    padding: 3.5em 1em 1em 1em;
     border-radius: 10px;
     margin: 0;
     position: fixed;
@@ -144,62 +117,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 1.5em;
-}
-
-.layout-wrapper {
-  display: flex;
-  gap: 40px;
-  padding: 40px 0;
-}
-
-.main-content {
-  flex: 2;
-  padding-right: 20px;
-}
-
-.menu-bajo-cabecera {
-  text-align: center;
-  margin: 30px auto 10px;
-}
-
-.menu-bajo-cabecera ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.menu-bajo-cabecera li {
-  display: inline-block;
-}
-
-.menu-bajo-cabecera a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e0f7f7;
-  border-radius: 8px;
-  font-weight: 500;
-  color: #1D5F5B;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1px solid #1D5F5B20;
-}
-
-.menu-bajo-cabecera a:hover {
-  background-color: #cceeee;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .site-footer {
   flex-shrink: 0;
   text-align: center;
+  margin-top: 3em;
   padding: 2em 1em;
   background-color: #f4f4f4;
   font-size: 0.9em;
@@ -208,8 +134,3 @@ h1, h2, h3, h4, h5, h6 {
 .highlight {
   font-weight: bold;
 }
-
-.page-wrapper {
-  flex: 1 0 auto;
-}
-
