@@ -18,7 +18,18 @@
       </div>
 
       <nav class="navbar">
-        <button class="hamburger" aria-label="Mostrar menú" onclick="document.querySelector('.navbar ul').classList.toggle('show')">&#9776;</button>
+        <button 
+          class="hamburger" 
+          aria-label="Mostrar menú" 
+          aria-expanded="false"
+          onclick="
+            const menu = document.querySelector('.navbar ul');
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('show');
+          ">
+          &#9776;
+        </button>
         <ul>
           <li><a href="{{ '/about' | relative_url }}">Sobre mí</a></li>
           <li><a href="{{ '/education' | relative_url }}">Educación</a></li>
