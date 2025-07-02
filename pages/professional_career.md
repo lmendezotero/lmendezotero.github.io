@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: aux_pages
 title: "Carrera Profesional"
 permalink: /professional_career/
 ---
