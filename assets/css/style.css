@@ -44,7 +44,7 @@ body {
 .header-text {
   margin-bottom: 0.5em;
   position: relative;
-  top: -5px; /* Eleva un poco en modo escritorio */
+  top: -5px;
 }
 
 .navbar {
@@ -78,7 +78,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Botón hamburguesa - oculto por defecto en escritorio */
+/* Botón hamburguesa - oculto en escritorio */
 .hamburger {
   display: none;
   font-size: 2em;
@@ -91,13 +91,17 @@ body {
 
 /* Media query para móvil */
 @media screen and (max-width: 768px) {
-  /* Ocultamos menú y lo hacemos vertical y fijo */
+  /* Más espacio arriba en el header para no tapar título */
+  .site-header {
+    padding-top: 4em;
+  }
+
   .navbar ul {
     display: none;
     flex-direction: column;
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 3.5em 1em 1em 1em; /* espacio para el botón hamburguesa */
+    padding: 4em 1em 1em 1em; /* espacio para el botón hamburguesa */
     border-radius: 10px;
     margin: 0;
     position: fixed;
@@ -108,7 +112,6 @@ body {
     z-index: 999;
   }
 
-  /* Mostramos menú cuando tenga clase .show */
   .navbar ul.show {
     display: flex;
   }
@@ -118,7 +121,7 @@ body {
     width: 100%;
   }
 
-  /* Mostramos botón hamburguesa */
+  /* Mostrar botón hamburguesa */
   .hamburger {
     display: inline-block;
   }
@@ -221,6 +224,6 @@ body {
 .hamburger {
   position: fixed;
   top: 1em;
-  right: 1em;
+  left: 1em; /* <-- lo movemos a la izquierda */
   z-index: 2000;
 }
