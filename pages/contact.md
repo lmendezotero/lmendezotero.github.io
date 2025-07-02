@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: aux_pages
 title: "Contacto"
 permalink: /contact/
 ---
