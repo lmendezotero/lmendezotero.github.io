@@ -332,3 +332,9 @@ body {
   color: #239A94;
   font-weight: bold;
 }
+
+/* Footer highlights */
+.site-footer .footer-highlight {
+  color: #239A94;
+  font-weight: bold;
+}
