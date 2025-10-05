@@ -364,3 +364,34 @@ body {
 .post-content .post-title-single {
   color: #154442 !important;
 }
+
+/* --- Estilo a iconos de redes sociales en el header --- */
+.social-icons {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+  display: flex;
+  gap: 0.8em;
+  z-index: 100;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.6em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #239A94;
+  transform: scale(1.15);
+}
+
+/* Ajustes para móviles */
+@media screen and (max-width: 768px) {
+  .social-icons {
+    top: auto;
+    bottom: 1em;
+    right: 1em;
+    font-size: 1.4em;
+  }
+}
