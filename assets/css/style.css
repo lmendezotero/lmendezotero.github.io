@@ -556,3 +556,8 @@ body {
   .navbar ul.show .only-mobile { display: block !important; }
 }
 
+/* “Inicio” solo visible dentro del menú hamburguesa de versión móvil */
+.only-mobile { display: none !important; }
+@media (max-width: 768px) {
+  .navbar ul.show .only-mobile { display: block !important; }
+}
