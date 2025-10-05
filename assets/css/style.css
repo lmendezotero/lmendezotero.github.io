@@ -365,27 +365,50 @@ body {
   color: #154442 !important;
 }
 
-/* --- Estilo a iconos de redes sociales en el header --- */
-/* --- Social icons arriba-derecha en móvil, alineados con la hamburguesa --- */
+/* --- Estilo de Iconos de redes sociales en el header --- */
+/* Versión web (pantallas grandes) */
+.social-icons {
+  position: absolute;
+  top: 1.2em;
+  right: 1.5em;
+  display: flex;
+  gap: 0.9em;
+  z-index: 100;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.6em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #239A94;       /* color turquesa del sitio */
+  transform: scale(1.15);
+}
+
+/* --- Versión móvil (pantallas <= 768px) --- */
 @media screen and (max-width: 768px) {
-  .site-header { position: relative; } /* ancla para posicionar dentro del header */
+  .site-header {
+    position: relative; /* para posicionar los iconos dentro del header */
+  }
 
   .social-icons {
-    position: absolute;   /* dentro del header */
-    top: 1rem;            /* misma altura que la hamburguesa */
-    right: 1rem;          /* pegado al borde derecho */
+    position: absolute;
+    top: 1rem;          /* misma altura que el botón hamburguesa */
+    right: 1rem;        /* alineado al borde derecho */
     display: flex;
     gap: 0.8rem;
     font-size: 1.4rem;
-    z-index: 1001;        /* por encima del fondo pero debajo del menú abierto */
+    z-index: 1001;      /* por encima del fondo pero debajo del menú abierto */
   }
 
-  /* Da aire al título para que no choque con los iconos */
+  /* Da un poco más de espacio al título para que no se solape con los iconos */
   .header-text {
     padding-top: 3.5rem !important;
   }
 
-  /* Asegura que el menú abierto quede por encima de los iconos */
+  /* Asegura que el menú hamburguesa abierto quede por encima de los iconos */
   .navbar ul.show {
     z-index: 1100 !important;
   }
