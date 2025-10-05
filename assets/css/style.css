@@ -1,3 +1,6 @@
+/* =========================================================
+   CÓDIGO DE ESTILOS CSS PARA LA WEB
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -411,5 +414,22 @@ body {
   /* Asegura que el menú hamburguesa abierto quede por encima de los iconos */
   .navbar ul.show {
     z-index: 1100 !important;
+  }
+}
+
+/* =========================================================
+   OVERRIDES FINALES: asegurar posición de iconos en móvil
+   (debe permanecer al FINAL del archivo)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+  header.site-header .social-icons {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    bottom: auto !important;
+    display: flex !important;
+    gap: 0.8rem !important;
+    font-size: 1.4rem !important;
+    z-index: 1001 !important;
   }
 }
