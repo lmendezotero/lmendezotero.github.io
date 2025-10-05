@@ -471,3 +471,34 @@ body {
     z-index: 1001 !important;
   }
 }
+
+/* =========================================================
+   AJUSTE: ocultar el botón X en escritorio y mostrar solo en móvil
+   ========================================================= */
+.menu-close {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1101;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+  }
+
+  .menu-close.is-visible {
+    display: block;
+  }
+}
