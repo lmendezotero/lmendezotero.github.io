@@ -417,6 +417,44 @@ body {
   }
 }
 
+/* ---------- SOLO MÓVIL: botón X para cerrar menú ---------- */
+@media screen and (max-width: 768px) {
+  .menu-close {
+    position: fixed;           /* por encima del overlay del menú */
+    top: 1rem;
+    right: 1rem;
+    z-index: 1101;             /* > 1100 del menú abierto */
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(0,0,0,0.75); /* fondo oscuro */
+    color: #fff;               /* X blanca */
+    font-size: 1.6rem;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: none;             /* se mostrará solo cuando el menú esté abierto */
+  }
+
+  /* En escritorio no debe verse nunca */
+  .only-mobile { display: none; }
+}
+
+/* Mostrar el botón X solo cuando el menú está abierto */
+@media screen and (max-width: 768px) {
+  .navbar ul.show ~ .menu-close,
+  .menu-close.is-visible {
+    display: block;
+  }
+}
+
+/* “Inicio” solo en móvil dentro del menú */
+@media screen and (max-width: 768px) {
+  .navbar ul.show .only-mobile { display: block; }
+}
+
+
 /* =========================================================
    OVERRIDES FINALES: asegurar posición de iconos en móvil
    (debe permanecer al FINAL del archivo)
