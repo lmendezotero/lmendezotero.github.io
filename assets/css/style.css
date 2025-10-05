@@ -502,3 +502,57 @@ body {
     display: block;
   }
 }
+
+/* Ajuste definitivo: Botón X solo en móvil y solo con menú abierto */
+
+/* 0) Siempre oculta por defecto en cualquier viewport */
+.menu-close {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 1) ESCRITORIO / TABLET (>=769px): permanece oculta sí o sí */
+@media (min-width: 769px) {
+  .menu-close {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* 2) MÓVIL (<=768px): estilos del botón, pero sigue oculta por defecto */
+@media (max-width: 768px) {
+  .menu-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1101;           /* por encima del overlay del menú */
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+    /* por defecto, oculta en móvil también */
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* 3) Mostrar SOLO cuando el menú está abierto (JS añade .is-visible) */
+  .menu-close.is-visible {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* “Inicio” solo visible dentro del menú abierto (tu comportamiento actual) */
+  .navbar ul.show .only-mobile { display: block !important; }
+}
+
