@@ -6,11 +6,11 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Favicons (con "cache buster" v=3) -->
+    <!-- Favicons (con "cache buster" v=2) -->
     <link rel="icon" href="{{ '/favicon.ico?v=2' | relative_url }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ '/favicon.ico?v=2' | relative_url }}">
     <meta name="theme-color" content="#239A94">
-    <!-- Referencia a Font Awesome para los iconos de redes sociales -->
+    <!-- Font Awesome para iconos sociales -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,12 +19,14 @@
   <body>
     <div class="page-wrapper">
       <header class="site-header" style="background-image: url('{{ site.header_image | relative_url }}');">
-        <button class="hamburger">&#9776;</button>
+        <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
         <div class="header-text">
           <h1>{{ site.title }}</h1>
           <p>{{ site.description }}</p>
         </div>
-        <!-- Incluir enlaces a los iconos de redes sociales en la parte superior derecha después del cabecero -->
+
+        <!-- Iconos sociales -->
         <div class="social-icons">
           <a href="https://github.com/lmendezotero" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
@@ -36,16 +38,23 @@
             <i class="fas fa-envelope"></i>
           </a>
         </div>
-        <nav class="navbar">
+
+        <nav class="navbar" aria-label="Navegación principal">
           <ul>
             <li><a href="{{ '/about/' | relative_url }}">Sobre mí</a></li>
             <li><a href="{{ '/education/' | relative_url }}">Educación</a></li>
             <li><a href="{{ '/professional_career/' | relative_url }}">Carrera Profesional</a></li>
             <li><a href="{{ '/speakings_and_collaborations/' | relative_url }}">Colaboraciones</a></li>
             <li><a href="{{ '/contact/' | relative_url }}">Contacto</a></li>
+            <!-- Solo móvil: Inicio al final del menú -->
+            <li class="only-mobile"><a href="{{ '/' | relative_url }}">Inicio</a></li>
           </ul>
         </nav>
+
+        <!-- Botón X para cerrar menú en móvil -->
+        <button class="menu-close" aria-label="Cerrar menú">×</button>
       </header>
+
       <main class="container">
         <div class="post-content">
           {{ content }}
@@ -56,23 +65,53 @@
         {% endif %}
       </main>
     </div>
+
     <footer class="site-footer">
       <p>Creado por <span class="footer-highlight">{{ site.author }}</span>. Hospedado en <a href="https://pages.github.com/" class="footer-highlight">GitHub Pages</a>.</p>
     </footer>
 
     <script>
-      // Cerrar el menú hamburguesa al volver atrás
       document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector(".navbar ul").classList.remove("show");
-      });
-      // También cerrar menú al volver atrás (navegadores con bfcache)
-      window.addEventListener('pageshow', function () {
-        document.querySelector('.navbar ul').classList.remove('show');
-      });
-      // Toggle hamburguesa
-      document.querySelector('.hamburger').addEventListener('click', function() {
-        document.querySelector('.navbar ul').classList.toggle('show');
+        const navList   = document.querySelector('.navbar ul');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn  = document.querySelector('.menu-close');
+
+        // Estado inicial: menú cerrado y botón X oculto
+        if (navList) navList.classList.remove('show');
+        if (closeBtn) closeBtn.classList.remove('is-visible');
+
+        // Abrir/cerrar con hamburguesa
+        if (hamburger) {
+          hamburger.addEventListener('click', function () {
+            navList.classList.toggle('show');
+            if (closeBtn) closeBtn.classList.toggle('is-visible', navList.classList.contains('show'));
+          });
+        }
+
+        // Cerrar con botón X sin navegar
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            navList.classList.remove('show');
+            closeBtn.classList.remove('is-visible');
+          });
+        }
+
+        // Cerrar al volver atrás (bfcache)
+        window.addEventListener('pageshow', function () {
+          navList.classList.remove('show');
+          if (closeBtn) closeBtn.classList.remove('is-visible');
+        });
+
+        // Cerrar al hacer click en cualquier enlace del menú
+        navList.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            navList.classList.remove('show');
+            if (closeBtn) closeBtn.classList.remove('is-visible');
+          });
+        });
       });
     </script>
   </body>
 </html>
+
